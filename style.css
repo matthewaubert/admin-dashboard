@@ -1,6 +1,7 @@
 /* general */
 
 :root {
+  --sky-600: #0284C7;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
@@ -8,6 +9,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  appearance: none;
+  border: none;
 }
 
 ul {
@@ -27,7 +37,7 @@ ul {
 /* sidebar */
 
 .sidebar {
-  background-color: #0284C7;
+  background-color: var(--sky-600);
   font-size: 1.1rem;
   grid-row: 1 / 3;
   display: grid;
@@ -52,7 +62,6 @@ ul {
 
 .sidebar li > a {
   color: white;
-  text-decoration: none;
   display: grid;
   grid-template-columns: 1fr 4fr;
   gap: 0.7rem;
@@ -72,6 +81,97 @@ ul {
 
 .header {
   background-color: lightgray;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.header > * {
+  align-self: center;
+}
+
+.header > form {
+  position: relative;
+}
+
+.header > form > input {
+  appearance: none;
+  border: none;
+  border-radius: 16px;
+  padding: 1rem;
+  height: 2rem;
+  width: 100%;
+}
+
+.header > form > button {
+  background-color: transparent;
+  background-image: url("img/magnify.svg");
+  border-radius: 16px;
+  position: absolute;
+  right: 6px;
+  top: 5px;
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.header > form > button:hover {
+  cursor: pointer;
+}
+
+.profile-container {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: end;
+}
+
+.profile-container > img[src="img/bell.svg"] {
+  width: 1.4rem;
+}
+
+.profile-container > a {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: black;
+}
+
+.profile-container img[src="img/squirrel0.jpg"] {
+  width: 2.6rem;
+  border-radius: 36px;
+}
+
+.greeting {
+  display: grid;
+  grid-template-columns: 3.9rem 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 1.2rem;
+  row-gap: 0.3rem;
+}
+
+div.greeting > p:nth-child(2) {
+  align-self: end;
+}
+
+.greeting img[src="img/squirrel0.jpg"] {
+  grid-row: 1 / 3;
+  width: 3.9rem;
+  border-radius: 36px;
+}
+
+.user-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* justify-content: end; */
+  gap: 1.2rem;
+}
+
+.user-btns button {
+  background-color: var(--sky-600);
+  border-radius: 24px;
+  color: white;
+  height: 2.4rem;
+  width: 100%;
 }
 
 /* main-content */
