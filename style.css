@@ -1,7 +1,14 @@
 /* general */
 
 :root {
+  --sky-500: #0EA5E9;
   --sky-600: #0284C7;
+  --gray-200: #E5E7EB;
+  --gray-300: #D1D5DB;
+  --gray-400: #9CA3AF;
+  --zinc-200: #E4E4E7;
+  --gap-med: 1.2rem;
+  --gap-sm: 0.7rem;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
@@ -31,13 +38,13 @@ ul {
 }
 
 .container > * {
-  padding: 1rem;
+  padding: var(--gap-med);
 }
 
 /* sidebar */
 
 .sidebar {
-  background-color: var(--sky-600);
+  background-color: var(--sky-500);
   font-size: 1.1rem;
   grid-row: 1 / 3;
   display: grid;
@@ -57,14 +64,14 @@ ul {
 
 .sidebar ul {
   display: grid;
-  gap: 1.2rem;
+  gap: var(--gap-med);
 }
 
 .sidebar li > a {
   color: white;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  gap: 0.7rem;
+  gap: var(--gap-sm);
 }
 
 .sidebar li > a > * {
@@ -80,11 +87,13 @@ ul {
 /* header */
 
 .header {
-  background-color: lightgray;
+  background-color: white;
+  box-shadow: 0px 3px 5px var(--gray-300);
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 1.2rem;
+  gap: var(--gap-med);
 }
 
 .header > * {
@@ -97,6 +106,7 @@ ul {
 
 .header > form > input {
   appearance: none;
+  background-color: var(--gray-200);
   border: none;
   border-radius: 16px;
   padding: 1rem;
@@ -121,7 +131,7 @@ ul {
 
 .profile-container {
   display: flex;
-  gap: 1.2rem;
+  gap: var(--gap-med);
   justify-content: end;
 }
 
@@ -132,7 +142,7 @@ ul {
 .profile-container > a {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: var(--gap-sm);
   color: black;
 }
 
@@ -145,7 +155,7 @@ ul {
   display: grid;
   grid-template-columns: 3.9rem 1fr;
   grid-template-rows: 1fr 1fr;
-  column-gap: 1.2rem;
+  column-gap: var(--gap-med);
   row-gap: 0.3rem;
 }
 
@@ -162,12 +172,11 @@ div.greeting > p:nth-child(2) {
 .user-btns {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* justify-content: end; */
-  gap: 1.2rem;
+  gap: var(--gap-med);
 }
 
 .user-btns button {
-  background-color: var(--sky-600);
+  background-color: var(--sky-500);
   border-radius: 24px;
   color: white;
   height: 2.4rem;
@@ -177,5 +186,41 @@ div.greeting > p:nth-child(2) {
 /* main-content */
 
 .main-content {
-  background-color: darkgrey;
+  background-color: var(--gray-200);
+  padding-top: var(--gap-sm);
+  display: grid;
+  gap: var(--gap-med);
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 2.4rem 1fr 2.4rem 1fr;
+}
+
+.projects {
+  grid-column: 1 / 2;
+  grid-row: 2 / -1;
+  display: grid;
+  gap: var(--gap-med);
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 4px 4px 4px var(--gray-300);
+}
+
+.main-content h3 {
+  align-self: end;
+  font-weight: 500;
+}
+
+.projects .card {
+  height: 12rem;
+}
+
+.announcements {
+
+}
+
+.trending {
+
 }
