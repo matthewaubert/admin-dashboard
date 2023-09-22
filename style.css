@@ -3,6 +3,7 @@
 :root {
   --sky-500: #0EA5E9;
   --sky-600: #0284C7;
+  --sky-700: #0369A1;
   --gray-200: #E5E7EB;
   --gray-300: #D1D5DB;
   --gray-400: #9CA3AF;
@@ -230,6 +231,11 @@ ul {
   color: var(--gray-500);
 }
 
+.main-content a:hover {
+  color: var(--sky-700);
+  text-decoration: underline;
+}
+
 .projects {
   grid-column: 1 / 2;
   grid-row: 2 / -1;
@@ -242,8 +248,15 @@ ul {
 .card {
   background-color: white;
   border-radius: 8px;
-  box-shadow: 4px 4px 4px var(--gray-300);
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  transition: all .1s ease-in;
   display: grid;
+}
+
+.card:hover {
+  box-shadow: 0px 4px 5px rgba(0,0,0,0.2);
+  top: -2px;
 }
 
 .main-content h3 {
@@ -278,12 +291,14 @@ ul {
   margin-top: auto;
 }
 
-.card-btn > img {
+.card-btn > svg {
   width: 1.3rem;
+  fill: var(--gray-800);
 }
 
-.card-btn > img:hover {
+.card-btn > svg:hover {
   cursor: pointer;
+  fill: var(--sky-700);
 }
 
 .announcements {
@@ -325,4 +340,9 @@ ul {
   flex-direction: column;
   gap: var(--gap-xs);
   justify-content: center;
+}
+
+.trending a:hover h6,
+.trending a:hover p {
+  color: var(--sky-700);
 }
